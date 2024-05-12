@@ -1,4 +1,5 @@
 from django.db import models
+<<<<<<< HEAD
 from django.core.validators import MaxLengthValidator
 
 # Create your models here.
@@ -26,3 +27,20 @@ class Pembelian(models.Model):
 
     def _str_(self):
         return self.book
+=======
+
+# Create your models here.
+class Book(models.Model):
+    title = models.CharField(max_length=100)
+    number_of_pages = models.IntegerField()
+    publish_date = models.DateField()
+    quantity = models.IntegerField()
+
+    def __str__(self):
+        return self.title
+    
+
+
+
+#   /books/list
+>>>>>>> ae0b8d3a0db8bf0bfdf5a3847d438cf155e0ffe6

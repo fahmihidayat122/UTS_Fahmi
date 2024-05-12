@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from rest_framework import serializers
 from .models import Book
 from .models import Pembeli
@@ -27,3 +28,18 @@ class PembelianSerializer(serializers.ModelSerializer):
     class Meta:
         model = Pembelian
         fields = ["id", "book", "pembeli", "jumlah", "tanggal_beli"]
+=======
+
+from rest_framework import serializers
+from book_api.models import Book
+
+class BookSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    title = serializers.CharField()
+    number_of_pages = serializers.IntegerField()
+    publish_date = serializers.DateField()
+    quantity = serializers.IntegerField()
+
+    def create(self, data):
+        return Book.objects.create(**data)
+>>>>>>> ae0b8d3a0db8bf0bfdf5a3847d438cf155e0ffe6
